@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
 
-    <title>Accordian</title>
+    <title>Carousel</title>
 
     <style>
       * {
@@ -24,199 +24,152 @@
         line-height: 1;
       }
 
-      .accordian {
-        width: 700px;
+      .carousel {
+        width: 800px;
         margin: 100px auto;
+        padding: 32px 48px 32px 86px;
+        background-color: #087f5b;
+        border-radius: 8px;
+        position: relative;
 
         display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      .item {
-        box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
-        padding: 24px;
-
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        column-gap: 24px;
-        row-gap: 32px;
         align-items: center;
-      }
-      .number,
-      .text {
-        font-size: 24px;
-        font-weight: bold;
-        /* color: #087f5b; */
+        gap: 86px;
       }
 
-      .number {
-        color: #ccd4da;
+      img {
+        height: 200px;
+        border-radius: 8px;
+        transform: scale(1.6);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
       }
-      .icon {
+
+      .testimonial-text {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 32px;
+        color: #e6fcf5;
+      }
+
+      .testimonial-author {
+        font-size: 14px;
+        margin-bottom: 4px;
+        color: #c3fae8;
+      }
+
+      .testimonial-job {
+        font-size: 12px;
+        color: #c3fae8;
+      }
+
+      .btn {
+        background-color: #fff;
+        border: none;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        position: absolute;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn--left {
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .btn--right {
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+      }
+
+      .btn-icon {
+        height: 24px;
         width: 24px;
         stroke: #087f5b;
       }
-      .hidden-box {
-        grid-column: 2;
-        display: none;
-      }
 
-      .hidden-box p {
-        line-height: 1.6;
-        margin-bottom: 24px;
-      }
-
-      .hidden-box ul {
-        color: #868e96;
-        margin-left: 20px;
+      .dots {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 32px);
 
         display: flex;
-        flex-direction: column;
         gap: 12px;
       }
 
-      /* OPEN STATE */
-
-      .open {
-        border-top: 4px solid #087f5b;
+      .dot {
+        height: 12px;
+        width: 12px;
+        background-color: #fff;
+        border: 2px solid #087f5b;
+        border-radius: 50%;
+        cursor: pointer;
       }
 
-      .open .hidden-box {
-        display: block;
-      }
-      .open .number,
-      .open .text {
-        color: #087f5b;
+      .dot--fill {
+        background-color: #087f5b;
       }
     </style>
   </head>
   <body>
-    <div class="accordian">
-      <div class="item">
-        <p class="number">01</p>
-        <p class="text">How long do I have to return my chair?</p>
+    <div class="carousel">
+      <img src="img/maria.jpg" alt="Maria image" />
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt
+          voluptatum incidunt aliquid doloribus, molestias blanditiis ducimus
+          corrupti iure.`
+        </p>
+        <p class="testimonial-author">Maria de Almedia</p>
+        <p class="testimonial-job">Senior Product Manager</p>
+      </blockquote>
+
+      <button class="btn btn--left">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="icon"
+          class="btn-icon"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
           />
         </svg>
-        <div class="hidden-box">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-            temporibus reprehenderit minus tempora aperiam natus aliquam enim
-            alias quam veniam quia suscipit, sapiente optio dolorem quos quae
-            voluptatibus in repudiandae.
-          </p>
-          <ul>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="item open">
-        <p class="number">02</p>
-        <p class="text">How long do I have to return my chair?</p>
+      </button>
+      <button class="btn btn--right">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="icon"
+          class="btn-icon"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
           />
         </svg>
-        <div class="hidden-box">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-            temporibus reprehenderit minus tempora aperiam natus aliquam enim
-            alias quam veniam quia suscipit, sapiente optio dolorem quos quae
-            voluptatibus in repudiandae.
-          </p>
-          <ul>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="item">
-        <p class="number">03</p>
-        <p class="text">Do you ship countries outside EU?</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="icon"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
-        </svg>
-        <div class="hidden-box">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-            temporibus reprehenderit minus tempora aperiam natus aliquam enim
-            alias quam veniam quia suscipit, sapiente optio dolorem quos quae
-            voluptatibus in repudiandae.
-          </p>
-          <ul>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit Deleniti .
-            </li>
-          </ul>
-        </div>
+      </button>
+      <div class="dots">
+        <button class="dot dot--fill">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
       </div>
     </div>
   </body>
