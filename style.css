@@ -7,4 +7,20 @@
 body {
   font-family: "Inter", sans-serif;
   color: #343a40;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  font-size: 42px;
+  line-height: 2;
+  font-weight: 500;
+  color: #087f5b;
+  text-decoration: none;
 }
